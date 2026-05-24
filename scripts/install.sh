@@ -1531,7 +1531,7 @@ run_browser_install_with_timeout() {
     shift
 
     if command -v timeout >/dev/null 2>&1; then
-        timeout "$timeout_seconds" "$@"
+        timeout --foreground "$timeout_seconds" "$@"
     else
         "$@"
     fi
